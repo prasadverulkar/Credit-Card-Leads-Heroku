@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+
+    <style>
+    body {
+        background-image: url('Credit_Card.jpg');
+        }
+    </style>
+  
+</head>
+
+
+
+<body >
+ <div class="login">
+	<h1>Credit Card Leads Prediction</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="/predict" method="post">
+        <label for = "gen">Gender: {'Male':1,'Female':0}</label><br>
+    	<input type="text" name="Gender" placeholder="Gender" required="required" id="gen"/><br><br>
+
+        <label for = "age">Age (18-85)</label><br>
+        <input type="number" name="Age" placeholder="Age" required="required" id="age"/><br><br>
+
+        <label for = "Region_Code">Region_Code (RG250-RG284)</label><br>
+		<input type="text" name="Region_Code" placeholder="Region_Code" required="required" id="Region_Code"/><br><br>
+
+        <label for = "occu">Occupation: {'Salaried':2,'Self_Employed':3,'Other':1,'Entrepreneur':0} </label><br>
+        <input type="text" name="Occupation" placeholder="Occupation" required="required" id="occu"/><br><br>
+
+        <label for = "ch_code">Channel_Code: {'X1':0,'X2':1,'X3':3} </label><br>
+        <input type="text" name="Channel_Code" placeholder="Channel_Code" required="required" id="ch_code"/><br><br>
+
+        <label for = "Vintage">Vintage (7-135) </label><br>
+        <input type="number" name="Vintage" placeholder="Vintage" required="required" id="Vintage"/><br><br>
+
+        <label for = "Credit_Product">Already has any Credit_Product? {'Yes':0,'No':1} </label><br>
+		<input type="text" name="Credit_Product" placeholder="Credit_Product" required="required" id="Credit_Product"/><br><br>
+
+
+        <input type="number" name="Avg_Account_Balance" placeholder="Avg_Account_Balance" required="required" /><br><br>
+
+        <label for = "Active"> Active in Last 3 Months? {'Yes':1,'No':0} </label><br>
+        <input type="text" name="Is_Active" placeholder="Is_Active" required="required" id="Active"/><br><br>
+
+        <!--<button type="submit" class="btn btn-primary btn-block btn-large">Predict</button> -->
+        <input type="submit" value="Predict">
+    </form>
+
+   <br>
+   <br>.
+
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
