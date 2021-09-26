@@ -9,8 +9,6 @@ import json
 app = Flask(__name__)
 # For model prediction
 model = pickle.load(open('model.pkl','rb'))
-# For Label Encode
-le = pickle.load(open('le_encode.pkl','rb'))
 # For Target Encode
 tar = pickle.load(open('tar_enc.pkl','rb'))
 
